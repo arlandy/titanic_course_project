@@ -1,0 +1,33 @@
+Titanic Survivor Prediction
+========================================================
+```
+https://arlandy.shinyapps.io/titanic/
+```
+
+Data Source
+========================================================
+The data can be found in http://vincentarelbundock.github.io/Rdatasets/datasets.html
+
+CART FINAL MODEL
+========================================================
+```{r, echo=FALSE}
+library(caret)
+library(e1071)
+library(rattle)
+data<-read.csv("titanic.csv")
+modFit <- train(Survived ~ .,method="rpart",data=data)
+fancyRpartPlot(modFit$finalModel)
+```
+
+Input values
+========================================================
+
+Make a selection to predict whether would survive on the Titanic:
+
+- Class
+- Sex
+- Age
+
+Outcome
+========================================================
+Press submit to get a result.
